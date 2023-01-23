@@ -22,10 +22,10 @@ router.get("/location/:location", controller.getRestaurantsLocation)
 router.get("/cuisine/:cuisine", controller.getRestaurantsCuisine)
 
 
-// router.post("/", controller.createGame)
+router.post("/", controller.createRestaurant)
 
-// router.put("/:id", controller.updateGame)
+router.put("/:id", controller.updateRestaurant)
 
-// router.delete("/:id", controller.deleteGame)
+router.delete("/:id", controller.deleteRestaurant)
 
 export default router
