@@ -10,18 +10,18 @@ export const getRestaurants = async (req, res) => {
   }
 }
 
-// export const queryGames = async (req, res) => {
-//   try {
-//     for (const key in req.query) {
-//       const games = await Games.find({[key] : req.query[key]})
-//       res.json(games)
+export const queryRestaurants = async (req, res) => {
+  try {
+    for (const key in req.query) {
+      const restaurants = await Restaurants.find({[key] : req.query[key]})
+      res.json(restaurants)
 
-//     }
-//   } catch (error) {
-//     console.error(error)
-//     res.status(500).json({ error: error.message })
-//   }
-// }
+    }
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: error.message })
+  }
+}
 
 export const getRestaurantRandom = async (req, res) => {
   try {
@@ -36,10 +36,10 @@ export const getRestaurantRandom = async (req, res) => {
   }
 }
 
-export const getGamesRandom10 = async (req, res) => {
+export const getRestaurantsRandom10 = async (req, res) => {
   try {
-      let games = await Games.aggregate([{ $sample: { size: 10 } }])
-        res.json(games)
+      let restaurants = await Restaurants.aggregate([{ $sample: { size: 10 } }])
+        res.json(restaurants)
           
   } catch (error) {
     console.error(error)
@@ -47,15 +47,15 @@ export const getGamesRandom10 = async (req, res) => {
   }
 }
 
-export const getGameId = async (req, res) => {
+export const getRestaurantId = async (req, res) => {
   try {
     const { id } = req.params
-    const games = await Games.findById(id)
+    const restaurants = await Restaurants.findById(id)
     
-    if (games) {
-      return res.json(games)
+    if (restaurants) {
+      return res.json(restaurants)
     }
-    res.status(404).json({ message: "Game not found!" })
+    res.status(404).json({ message: "Restaurant not found!" })
 
   } catch (error) {
     console.error(error)
@@ -63,47 +63,37 @@ export const getGameId = async (req, res) => {
   }
 }
 
-export const getGameTitle = async (req, res) => {
+export const getRestaurantName = async (req, res) => {
   try {
-    const { title } = req.params
-    const games = await Games.findOne({'title': title})
+    const { name } = req.params
+    const restaurants = await Restaurants.findOne({'name': name})
 
-    if (games) {
-      return res.json(games)
+    if (restaurants) {
+      return res.json(restaurants)
     }
 
-    res.status(404).json({ message: "Game not found!" })
+    res.status(404).json({ message: "Restaurant not found!" })
   } catch (error) {
     console.error(error)
     res.status(500).json({ error: error.message })
   }
 }
 
-export const getGamesGenre = async (req, res) => {
+export const getRestaurantsLocation = async (req, res) => {
   try {
-    const { genre } = req.params
-    const games = await Games.find({'genre': genre})
-
-    if (games) {
-      return res.json(games)
+    const { location } = req.params
+    let restaurants 
+    if(location.length === 5) {
+        restaurants = await Restaurants.find({'address.zipcode': location})
+    } else {
+        restaurants = await Restaurants.find({'address.city': location})
     }
-    res.status(404).json({ message: "Game not found!" })
 
-  } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: error.message })
-  }
-}
 
-export const getGamesPlatform = async (req, res) => {
-  try {
-    const { platform } = req.params
-    const games = await Games.find({'platform': platform})
-
-    if (games) {
-      return res.json(games)
+    if (restaurants) {
+      return res.json(restaurants)
     }
-    res.status(404).json({ message: "Game not found!" })
+    res.status(404).json({ message: "Restaurant not found!" })
 
   } catch (error) {
     console.error(error)
@@ -111,15 +101,15 @@ export const getGamesPlatform = async (req, res) => {
   }
 }
 
-export const getGamesPublisher = async (req, res) => {
+export const getRestaurantsCuisine = async (req, res) => {
   try {
-    const { publisher } = req.params
-    const games = await Games.find({'publisher': publisher})
+    const { cuisine } = req.params
+    const restaurants = await Restaurants.find({'cuisines': cuisine})
 
-    if (games) {
-      return res.json(games)
+    if (restaurants) {
+      return res.json(restaurants)
     }
-    res.status(404).json({ message: "Game not found!" })
+    res.status(404).json({ message: "Restaurant not found!" })
 
   } catch (error) {
     console.error(error)
@@ -127,25 +117,9 @@ export const getGamesPublisher = async (req, res) => {
   }
 }
 
-export const getGamesDeveloper = async (req, res) => {
+export const createRestaurant = async (req, res) => {
   try {
-    const { developer } = req.params
-    const games = await Games.find({'developer': developer})
-
-    if (games) {
-      return res.json(games)
-    }
-    res.status(404).json({ message: "Game not found!" })
-
-  } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: error.message })
-  }
-}
-
-export const createGame = async (req, res) => {
-  try {
-    await Games.create(req.body)
+    await Restaurants.create(req.body)
     res.status(201).json(req.body)
   } catch (error) {
     console.error(error)
@@ -153,27 +127,27 @@ export const createGame = async (req, res) => {
   }
 }
 
-export const updateGame = async (req, res) => {
+export const updateRestaurant = async (req, res) => {
   try {
     const { id } = req.params
-    const game = await Games.findByIdAndUpdate(id, req.body)
-    res.status(201).json(game)
+    const restaurant = await Restaurants.findByIdAndUpdate(id, req.body)
+    res.status(201).json(restaurant)
   } catch (error) {
     console.error(error)
     res.status(500).json({ error: error.message })
   }
 }
 
-export const deleteGame = async (req, res) => {
+export const deleteRestaurant = async (req, res) => {
   try {
     const { id } = req.params
-    const remove = await Games.findByIdAndDelete(id)
+    const remove = await Restaurants.findByIdAndDelete(id)
 
     if (remove) {
-      return res.status(200).send("Game deleted!")
+      return res.status(200).send("Restaurant deleted!")
     }
 
-    throw new Error("Game not found")
+    throw new Error("Restaurant not found")
   } catch (error) {
     console.error(error)
     res.status(500).json({ error: error.message })

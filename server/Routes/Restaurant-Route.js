@@ -1,34 +1,31 @@
 import { Router } from "express"
 import express from 'express'
-import * as controller from "../Controllers/Game-Controller.js"
+import * as controller from "../Controllers/Restaurant-Controller.js"
 
 const router = Router()
 router.use(express.json())
 
-router.get("/", controller.getGames)
-router.get("/id", controller.getGames)
-router.get("/title", controller.getGames)
-router.get("/genre", controller.getGames)
-router.get("/platform", controller.getGames)
-router.get("/publisher", controller.getGames)
-router.get("/developer", controller.getGames)
+router.get("/", controller.getRestaurants)
+router.get("/id", controller.getRestaurants)
+router.get("/name", controller.getRestaurants)
+router.get("/location", controller.getRestaurants)
+router.get("/cuisine", controller.getRestaurants)
 
-router.get("/:query", controller.queryGames)
+router.get("/:query", controller.queryRestaurants)
 
-router.get("/random", controller.getGameRandom)
-router.get("/random10", controller.getGamesRandom10)
+router.get("/random", controller.getRestaurantRandom)
+router.get("/random10", controller.getRestaurantsRandom10)
 
-router.get("/id/:id", controller.getGameId)
-router.get("/title/:title", controller.getGameTitle)
-router.get("/genre/:genre", controller.getGamesGenre)
-router.get("/platform/:platform", controller.getGamesPlatform)
-router.get("/publisher/:publisher", controller.getGamesPublisher)
-router.get("/developer/:developer", controller.getGamesDeveloper)
+router.get("/id/:id", controller.getRestaurantId)
+router.get("/name/:name", controller.getRestaurantName)
+router.get("/location/:location", controller.getRestaurantsLocation)
+router.get("/cuisine/:cuisine", controller.getRestaurantsCuisine)
 
-router.post("/", controller.createGame)
 
-router.put("/:id", controller.updateGame)
+// router.post("/", controller.createGame)
 
-router.delete("/:id", controller.deleteGame)
+// router.put("/:id", controller.updateGame)
+
+// router.delete("/:id", controller.deleteGame)
 
 export default router
