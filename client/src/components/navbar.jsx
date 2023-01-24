@@ -40,9 +40,10 @@ const Navbar = () => {
             </nav>
 
             <div className={menu_class}>
-                <img  src={"logo.jpeg"} style={{width: 230, height: 240 }}/>
+                
+                <Link  id={"search"} to={"/browse"}>&nbsp;Search Resturant!</Link>
                 <br></br>
-                <Link  id={"search"} to={"/browse"}>Search Resturant!</Link>
+                <img  src={"logo.jpeg"} style={{width: 340, height: 280 }}/>
             </div>
             
         </div>
