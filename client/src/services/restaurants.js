@@ -3,7 +3,6 @@ import api from './apiConfig.js'
 export const getRestaurants = async () => {
   try {
     const response = await api.get('/')
-    console.log(response)
     return response.data
   } catch (error) {
     throw error

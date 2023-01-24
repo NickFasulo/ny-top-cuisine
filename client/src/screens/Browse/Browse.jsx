@@ -8,8 +8,6 @@ export default function Browse() {
   const [restaurants, setRestaurants] = useState([])
   const [loading, isLoading] = useState(true)
 
-  console.log(restaurants)
-
   useEffect(() => {
     fetchRestaurants()
     isLoading(false)
