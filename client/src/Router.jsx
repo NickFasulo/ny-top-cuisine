@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar.jsx'
 import Home from './screens/Home.jsx'
+import Browse from './screens/Browse/Browse.jsx'
 import { Routes, Route } from 'react-router-dom'
 
 export default function Router() {
@@ -8,6 +9,7 @@ export default function Router() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/browse' element={<Browse />} />
       </Routes>
     </div>
   )
