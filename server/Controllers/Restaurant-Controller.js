@@ -15,7 +15,6 @@ export const queryRestaurants = async (req, res) => {
     for (const key in req.query) {
       const restaurants = await Restaurants.find({[key] : req.query[key]})
       res.json(restaurants)
-
     }
   } catch (error) {
     console.error(error)

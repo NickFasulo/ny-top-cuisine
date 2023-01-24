@@ -26,19 +26,19 @@ let updatedData = data.restaurants.map(item => {
     foodData.aggregated_rating_count = item.aggregated_rating_count
     foodData.supports_upc_codes = item.supports_upc_codes
     return item
-
 })
 
 let seedRestaurants = async() => {
     try {
-        await Restaurants.deleteMany()
+        // console.log(connection)
+        connection && await Restaurants.deleteMany()
         await Restaurants.create(updatedData)
         console.log('Restaurants added to database')
         connection.close()
     } 
+
     catch (err) {
         console.error("Failed", err)
     }
 }
-
 seedRestaurants()
