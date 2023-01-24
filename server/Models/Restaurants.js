@@ -1,18 +1,5 @@
 import mongoose from 'mongoose'
 
-const AddressSchema = new mongoose.Schema({
-    street_addr: String,
-    city: String,
-    state: String,
-    zipcode: String,
-    country: String,
-    lat: Number,
-    lon: Number,
-    street_addr_2: String,
-    latitude: Number,
-    longitude: Number
-})
-
 const DaysSchema = new mongoose.Schema({
     Monday: String,
     Tuesday: String,
@@ -21,13 +8,6 @@ const DaysSchema = new mongoose.Schema({
     Friday: String,
     Saturday: String,
     Sunday: String
-})
-
-const TypeSchema = new mongoose.Schema({
-    operational: DaysSchema,
-    delivery: DaysSchema,
-    pickup: DaysSchema,
-    dine_in: DaysSchema
 })
 
 const RestaurantsSchema = new mongoose.Schema({
