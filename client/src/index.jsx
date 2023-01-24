@@ -1,6 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './screens/App'
+import Router from './Router'
+import { BrowserRouter } from 'react-router-dom'
 import './global.css'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <BrowserRouter>
+    <Router />
+  </BrowserRouter>,
+  document.getElementById('root')
+)
