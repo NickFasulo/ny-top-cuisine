@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import './navbar.css'
 import { Link } from "react-router-dom";
-import Home from "../screens/Home.jsx"
+import '../screens/Home'
+
 
 
 
