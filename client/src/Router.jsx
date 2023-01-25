@@ -7,6 +7,7 @@ export default function Router() {
   return (
     <div className='App'>
       <Navbar />
+      <div className='pholder'></div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/browse' element={<Browse />} />
