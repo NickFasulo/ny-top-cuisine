@@ -29,7 +29,7 @@ const Navbar = () => {
     }
 
     return(
-        <div style={{width: '100%', height: '100vh'}}>
+        <>
             <nav>
                 <div className="burger-menu" onClick={updateMenu}>
                     <div className={burger_class} ></div>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <img  src={"logo.jpeg"} style={{width: 340, height: 280 }}/>
             </div>
             
-        </div>
+        </>
     )
 }
 
