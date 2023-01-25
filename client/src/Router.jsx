@@ -8,7 +8,7 @@ export default function Router() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/' elemnet={<browse />} />
+        {/* <Route path='/' elemnet={<browse />} /> */}
       </Routes>
     </div>
   )

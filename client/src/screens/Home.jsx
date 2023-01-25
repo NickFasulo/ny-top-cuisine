@@ -1,7 +1,9 @@
-import home from "../../src/screens/home.css"
-import { getRestaurants } from "../services/restaurants.js"
+import home from "../../src/screens/home.css";
+import navbar from "../components/navbar.css";
+import { getRestaurants } from "../services/restaurants.js";
 import { useEffect, useState } from "react";
-import axios from 'axios'
+import axios from 'axios';
+import Navbar from "../components/Navbar.jsx";
 
 
 export default function Home() {
