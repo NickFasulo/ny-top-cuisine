@@ -11,6 +11,8 @@ nav {
     display: flex;
     justify-content: flex-start;
     padding: 1em;
+    position: fixed;
+    z-index: 98;
 }
 
 .burger-menu {
@@ -21,6 +23,8 @@ nav {
     align-items: flex-start;
     justify-content: space-between;
     cursor: pointer;
+   
+    
 }
 
 .burger-bar {
@@ -44,6 +48,8 @@ nav {
     text-decoration:none;
   margin: 50px;
     cursor: pointer;
+    z-index: 99;
+    position:fixed;
     
     
     
@@ -59,7 +65,10 @@ nav {
 .visible {
     display: inherit;
     background-color: blue;
+    z-index: 99;
+    margin-top: 5em;
 }
+
 
 /* ----- animations--------- */
 /* clicked */

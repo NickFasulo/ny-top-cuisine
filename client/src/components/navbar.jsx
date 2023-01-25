@@ -17,7 +17,7 @@ const Navbar = () => {
         if(!isMenuClicked) {
             setBurgerClass("burger-bar clicked")
             setMenuClass("menu visible")
-             setMenuClass("Link")
+            //  setMenuClass("Link")
             // setMenuClass("Image")
         }
         else {
