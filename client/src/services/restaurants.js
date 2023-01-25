@@ -3,7 +3,10 @@ import api from './apiConfig.js'
 export const getRestaurants = async () => {
   try {
     const response = await api.get('/')
-    return response.data
+    return response.data.filter(
+      (value, idx, restaurants) => 
+      idx === restaurants.findIndex(i => i.phone_number === value.phone_number)
+      )
   } catch (error) {
     throw error
   }

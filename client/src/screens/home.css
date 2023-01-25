@@ -1,7 +1,22 @@
 body {
-  background-image: url(../../../thecity.webp)
-}
-/* 
-h1 { 
   text-align: center;
+  
+  /* background-image: url(../../../thecity.webp) */
+}
+
+/* h1 { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 } */
+
+
+
+.rest-container .image {
+ 
+  text-align: center;
+  width: 20vw;
+  height: 20hv;
+  
+}
+

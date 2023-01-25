@@ -14,19 +14,23 @@ export default function Home() {
   async function fetchRestaurants() {
     const allRestaurants = await getRestaurants();
     setHome(allRestaurants);
-  }
+  };
 
 
 
   return (
     <div>
       <h1>New York Top Cuisine</h1>
-      <div>
+      <div className="rest-container">
         {home.map((restData) => (
-          <h1>{restData.name}</h1>
-      
-        ))
+          <>
+            <img className="image" src={restData.logo_photos} />
+            <h1>{restData.name}</h1>
+            <h3>Rating: {restData.weighted_rating_value}</h3>
+            <h4>City: {restData.address.city}, {restData.address.state}</h4>
 
+          </>
+        ))
         }
       </div>
     </div>
