@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getRestaurants } from '../../services/restaurants'
-import Restaurant from '../../components/Restaurant.jsx'
+import Restaurant from '../../components/Restaurant/Restaurant.jsx'
 import Search from '../../components/Search.jsx'
 import './Browse.css'
 
@@ -27,12 +27,14 @@ export default function Browse() {
   }
 
   return (
-    <div>
+    <div className='browse'>
       <h1>Search New York's Top Restaurants</h1>
       <Search />
-      {restaurants.map(restaurant => (
-        <Restaurant restaurant={restaurant} key={restaurant._id} />
-      ))}
+      <main>
+        {restaurants.map(restaurant => (
+          <Restaurant restaurant={restaurant} key={restaurant._id} />
+        ))}
+      </main>
     </div>
   )
 }
