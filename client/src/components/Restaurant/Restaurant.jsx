@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom'
 import './Restaurant.css'
 
 export default function Restaurant({ restaurant }) {
-  console.log(restaurant)
-
   return (
     <div className='rest-card'>
       <Link to={`/${restaurant._id}`}>
