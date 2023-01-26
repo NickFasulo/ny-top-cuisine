@@ -37,7 +37,7 @@ export default function RestaurantDetail() {
         <div className='detailContainer'>
             <h1 className='detailTitle'>{restaurant.name}</h1>
             <div className='detailImgBox'>
-            <img src={restaurant?.food_photos} alt={restaurant?.name} className='detailImg'/>
+            <img src={restaurant?.logo_photos} alt={restaurant?.name} className='detailImg'/>
             <h4>
                 <ul className='detailHoursList'>
                 <li className='detailHours'>{`Monday: ${restaurant?.local_hours.operational.Monday}`}</li>
@@ -55,8 +55,16 @@ export default function RestaurantDetail() {
                 {restaurant?.cuisines.map((cuisine) => (
                 <li className='detailCuisineList'>{cuisine}</li>
             ))}</ul>
-            <div>
+            <div className='infoDetail'>
             <h2 className='cuisineTitle'>Restaurant Info</h2>
+            <ul>
+                <li className='detailCuisineList'>{`Street Address: ${restaurant.address.street_addr}`}</li>
+                <li className='detailCuisineList'>{`Location: ${restaurant.address.city}`}</li>
+                <li className='detailCuisineList'>{`Zipcode: ${restaurant.address.zipcode}`}</li>
+                <li className='detailCuisineList'>{`Phone: ${restaurant.phone_number}`}</li>
+                <li className='detailCuisineList'>{`Price Rating: 💰${restaurant.dollar_signs}`}</li>
+                <li className='detailCuisineList'>{`Rating: ⭐${restaurant.weighted_rating_value}`}</li>
+            </ul>
             </div>
             <div className='aiBox'>
 

@@ -76,7 +76,8 @@
     margin-top: 20px;
     border-right: solid rgba(0, 0, 0, 0.345);
     width: 30%;
-    height: 36.5%
+    height: 36.5%;
+    /* border-bottom: solid rgba(0, 0, 0, 0.23); */
 }
 .cuisineTitle {
     font-family: fantasy;
@@ -87,4 +88,13 @@
     margin-top: 10px;
     font-family: fantasy;
     font-size: 20px;
+}
+.infoDetail {
+    margin-top: 20px;
+    
+    /* display: flex;
+    flex-direction: column; */
+}
+ul {
+    list-style: none;
 }
