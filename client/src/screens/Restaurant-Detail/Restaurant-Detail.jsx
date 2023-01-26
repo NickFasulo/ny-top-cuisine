@@ -5,6 +5,7 @@ import { getRestaurant, deleteRestaurant } from '../../services/restaurants'
 
 export default function RestaurantDetail() {
     const [restaurant,setRestaurant] = useState({})
+    const [ai,setAI] = useState('')
     const { id } = useParams()
     const navigate = useNavigate()
     const [loading, isLoading] = useState(true)
@@ -20,6 +21,7 @@ export default function RestaurantDetail() {
     }
     const deleteRestaurants = async() => {
         await deleteRestaurant(id)
+        navigate(`/browse`, { replace: true });
     }
 
     if (loading) {
@@ -65,10 +67,12 @@ export default function RestaurantDetail() {
                 <li className='detailCuisineList'>{`Price Rating: 💰${restaurant.dollar_signs}`}</li>
                 <li className='detailCuisineList'>{`Rating: ⭐${restaurant.weighted_rating_value}`}</li>
             </ul>
+            <button className='detailButtons'>Edit Restaurant</button>
+            <button className='detailButtons'>Delete Restaurant</button>
             </div>
-            <div className='aiBox'>
-
-            </div>
+            <h2 className='cuisineTitle' id='aiTitle'>{`Why NYTC Loves ${restaurant.name}`}</h2>
+            <div className='aiBox'>{ai}</div>
+            <button className='detailButtons'>Generate LOVE</button>
         </div>
         </>)}
 
