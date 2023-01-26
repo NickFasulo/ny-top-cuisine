@@ -12,7 +12,7 @@ export default function Router() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/browse' element={<Browse />} />
-        <Route path='/browse/:id' element={<RestaurantDetail />} />
+        <Route path='/:id' element={<RestaurantDetail />} />
       </Routes>
     </div>
   )

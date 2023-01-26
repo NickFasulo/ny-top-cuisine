@@ -22,7 +22,9 @@ export default function RestaurantDetail() {
 
   return (
     <>
-        Restaurant-Detail
+        <div className='detailContainer'>
+
+        </div>
 
     </>
   )
