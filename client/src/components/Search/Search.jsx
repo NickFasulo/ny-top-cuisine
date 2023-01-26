@@ -1,9 +1,13 @@
 import './Search.css'
 
-export default function Search() {
+export default function Search({ onChange }) {
   return (
     <form>
-      <input type='search' />
+      <input
+        onChange={onChange}
+        placeholder='Search restaurants...'
+        type='search'
+      />
     </form>
   )
 }
