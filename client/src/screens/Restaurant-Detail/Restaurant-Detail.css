@@ -76,7 +76,8 @@
     margin-top: 20px;
     border-right: solid rgba(0, 0, 0, 0.345);
     width: 30%;
-    height: 36.5%
+    height: 36.5%;
+    /* border-bottom: solid rgba(0, 0, 0, 0.23); */
 }
 .cuisineTitle {
     font-family: fantasy;
@@ -87,4 +88,38 @@
     margin-top: 10px;
     font-family: fantasy;
     font-size: 20px;
+}
+.infoDetail {
+    margin-top: 20px;
+    
+    /* display: flex;
+    flex-direction: column; */
+}
+ul {
+    list-style: none;
+}
+.detailButtons {
+    margin-top: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#aiTitle {
+    margin-top: 160px;
+    border-top: solid rgba(0, 0, 0, 0.23);
+    width: 98%;
+    margin-left: 8px
+}
+.aiBox {
+    margin-top: 10px;
+    font-family: fantasy;
+    font-size: 20px;
+    text-align: left;
+    width:90%;
+    display: flex;
+    justify-content: center;
+}
+.aiText {
+    margin-left: -20px;
 }
