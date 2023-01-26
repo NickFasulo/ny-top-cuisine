@@ -12,9 +12,18 @@ export const getRestaurants = async () => {
   }
 }
 
-export const getRestaurant = async id => {
+export const getRestaurant = async (id) => {
   try {
-    const response = await api.get(`/${id}`)
+    const response = await api.get(`/id/${id}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const getRestaurantRandom = async () => {
+  try {
+    const response = await api.get(`/random`)
     return response.data
   } catch (error) {
     throw error
