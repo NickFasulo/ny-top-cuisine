@@ -31,12 +31,16 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className="burger-menu" onClick={updateMenu}>
+       <div className="burger-menu" onClick={updateMenu}>
           <div className={burger_class} ></div>
           <div className={burger_class} ></div>
           <div className={burger_class} ></div>
-
         </div>
+
+
+        <h1 className="nav-title">NYTC</h1>
+
+
       </nav>
 
       <div className={menu_class}>
