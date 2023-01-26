@@ -2,12 +2,12 @@ import './Search.css'
 
 export default function Search({ onChange }) {
   return (
-    <form>
+    <div className='search'>
       <input
         onChange={onChange}
         placeholder='Search restaurants...'
         type='search'
       />
-    </form>
+    </div>
   )
 }

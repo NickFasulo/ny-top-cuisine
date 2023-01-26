@@ -7,6 +7,10 @@
   background: white;
 }
 
+.rest-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .rest-card img {
   border-radius: 0.9rem 0.9rem 0 0;
   width: 100%;

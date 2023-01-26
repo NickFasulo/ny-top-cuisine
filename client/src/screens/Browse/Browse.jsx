@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { getRestaurants } from '../../services/restaurants'
 import Restaurant from '../../components/Restaurant/Restaurant.jsx'
 import Search from '../../components/Search/Search.jsx'
