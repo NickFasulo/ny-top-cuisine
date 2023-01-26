@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react'
 import './Restaurant-Detail.css'
 import { useParams } from 'react-router-dom'
-import { getRestaurant } from '../../services/restaurants'
+import { getRestaurant, deleteRestaurant } from '../../services/restaurants'
 
 export default function RestaurantDetail() {
     const [restaurant,setRestaurant] = useState({})
@@ -15,11 +15,15 @@ export default function RestaurantDetail() {
         const oneRest = await getRestaurant(id)
         setRestaurant(oneRest)
     }
+    const deleteRestaurants = async() => {
+        await deleteRestaurant(id)
+    }
 
 
   return (
-    <>Restaurant-Detail
-    
+    <>
+        Restaurant-Detail
+
     </>
   )
 }
