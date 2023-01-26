@@ -2,9 +2,6 @@ import "../../src/screens/home.css";
 import "../components/navbar.css";
 import { getRestaurants } from "../services/restaurants.js";
 import { useEffect, useState } from "react";
-import axios from 'axios';
-import "../components/Navbar.jsx";
-import '../App.jsx'
 
 
 export default function Home() {
@@ -23,7 +20,6 @@ export default function Home() {
 
   return (
     <div>
-        <Navbar />
       <h1>New York Top Cuisine</h1>
       <div className="rest-container">
         {home.map((restData) => (
@@ -35,7 +31,7 @@ export default function Home() {
 
           </>
         ))
-      }
+        }
       </div>
     </div>
   )

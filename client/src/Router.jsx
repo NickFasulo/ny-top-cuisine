@@ -1,7 +1,7 @@
 import Home from './screens/Home.jsx'
 import Browse from './screens/Browse/Browse.jsx'
 import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/navbar.jsx'
+import Navbar from './components/Navbar.jsx'
 import RestaurantDetail from './screens/Restaurant-Detail/Restaurant-Detail.jsx'
 
 export default function Router() {
