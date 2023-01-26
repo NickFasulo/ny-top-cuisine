@@ -1,8 +1,17 @@
+.detailBackground {
+    position: fixed;
+    height:100vh;
+    width: 100vw;
+    background-color: azure;
+    z-index: -1;
+    background-image: linear-gradient(to bottom right, rgb(77, 125, 255), rgba(50, 27, 160, 0.935));
+}
 .detailContainer {
-    height: 100%;
-    width: 80%;
-    border: solid whitesmoke;
+    height: 90em;
+    width: 70%;
+    border: solid black;
     margin: 0 auto;
     margin-top: 5px;
     border-radius: 10px;
+    background-color: white;
 }
