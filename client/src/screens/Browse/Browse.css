@@ -1,0 +1,14 @@
+.browse {
+  background: whitesmoke;
+  padding-top: 1rem;
+}
+
+.browse main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.browse h1 {
+  margin: 1rem 2rem;
+}

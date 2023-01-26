@@ -1,5 +1,5 @@
 import "../../src/screens/home.css";
-import "../components/navbar.css";
+import "../components/Navbar/navbar.css";
 import { getRestaurants } from "../services/restaurants.js";
 import { useEffect, useState } from "react";
 
