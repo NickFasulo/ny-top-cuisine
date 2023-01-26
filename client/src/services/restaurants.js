@@ -21,6 +21,15 @@ export const getRestaurant = async (id) => {
   }
 }
 
+export const getRestaurantRandom = async () => {
+  try {
+    const response = await api.get(`/random`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const createRestaurant = async restaurantData => {
   try {
     const response = await api.post('/', restaurantData)
