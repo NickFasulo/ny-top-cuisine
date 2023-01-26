@@ -2,18 +2,41 @@ import { useState,useEffect } from 'react'
 import './Restaurant-Detail.css'
 import { useParams,useNavigate } from 'react-router-dom'
 import { getRestaurant, deleteRestaurant } from '../../services/restaurants'
+import { Configuration, OpenAIApi } from "openai";
+// import dotenv from 'dotenv'
+
 
 export default function RestaurantDetail() {
+    // dotenv.config()
     const [restaurant,setRestaurant] = useState({})
-    const [ai,setAI] = useState('')
+    const [ai,setAI] = useState()
     const { id } = useParams()
     const navigate = useNavigate()
     const [loading, isLoading] = useState(true)
+    const configuration = new Configuration({
+        apiKey: process.env.OPEN_API_KEY,
+      });
+    const openai = new OpenAIApi(configuration);
+    const completion = async() => {
+        const complete = await openai.createCompletion({
+            model: "text-davinci-003",
+            prompt: `Tell me why you love ${restaurant.name} food so much. They serve ${restaurant.cuisines[0]}, ${restaurant.cuisines[1]} and ${restaurant.cuisines[2]}`,
+            temperature: 0.6,
+            max_tokens: 99,
+      })
+      setAI(complete.data.choices[0].text)
+      return complete.data.choices[0].text
+    }
 
     useEffect(() => {
         fetchRestaurant()
         isLoading(false)
+        console.log()
     }, [])
+
+    const HandleAI = () => {
+        completion()
+    }
 
     const fetchRestaurant = async() => {
         const oneRest = await getRestaurant(id)
@@ -71,8 +94,10 @@ export default function RestaurantDetail() {
             <button className='detailButtons'>Delete Restaurant</button>
             </div>
             <h2 className='cuisineTitle' id='aiTitle'>{`Why NYTC Loves ${restaurant.name}`}</h2>
-            <div className='aiBox'>{ai}</div>
-            <button className='detailButtons'>Generate LOVE</button>
+            <div className='aiBox'>
+                <p className='aiText'>{ai}</p>
+            </div>
+            <button className='detailButtons' onClick={HandleAI}>Generate LOVE</button>
         </div>
         </>)}
 

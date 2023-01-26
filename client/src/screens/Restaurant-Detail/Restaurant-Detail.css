@@ -116,4 +116,10 @@ ul {
     font-family: fantasy;
     font-size: 20px;
     text-align: left;
+    width:90%;
+    display: flex;
+    justify-content: center;
+}
+.aiText {
+    margin-left: -20px;
 }
