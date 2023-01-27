@@ -15,6 +15,14 @@ nav {
     position:fixed;
     z-index:98
   }
+
+  .nav-title {
+    color:white;
+    font-size: 50px;
+    width:90vw;
+    text-align: center;
+  
+  }
   
   .burger-menu {
     height: 100%;
@@ -73,7 +81,6 @@ nav {
     margin-top: 5em;
     width: 340px;
     position:fixed
-    
 }
 
 
@@ -99,3 +106,4 @@ nav {
     transform: rotate(0) translate(0);
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
 }
+
