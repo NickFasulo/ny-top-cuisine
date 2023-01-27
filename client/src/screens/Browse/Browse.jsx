@@ -2,21 +2,29 @@ import { useEffect, useState } from 'react'
 import { getRestaurants } from '../../services/restaurants'
 import Restaurant from '../../components/Restaurant/Restaurant.jsx'
 import Search from '../../components/Search/Search.jsx'
+import Filter from '../../components/Filter/Filter.jsx'
 import ScrollToTop from 'react-scroll-to-top'
 import './Browse.css'
 
 export default function Browse() {
+  const [selected, setSelected] = useState([])
   const [restaurants, setRestaurants] = useState([])
   const [filteredResults, setFilteredResults] = useState([])
-  const [searchInput, setSearchInput] = useState('')
   const [loading, isLoading] = useState(true)
+  const [searchInput, setSearchInput] = useState('')
+
+  console.log(restaurants)
+
+  const sortItems = (items) => {
+    items.sort((a, b) => a - b)
+  }
 
   useEffect(() => {
     fetchRestaurants()
     isLoading(false)
   }, [])
 
-  async function fetchRestaurants() {
+  const fetchRestaurants = async () => {
     const allRestaurants = await getRestaurants()
     setRestaurants(allRestaurants)
   }
@@ -44,10 +52,13 @@ export default function Browse() {
     )
   }
 
+  console.log(selected)
+
   return (
     <div className='browse'>
       <h1>Search New York's Top Restaurants</h1>
       <Search onChange={e => searchItems(e.target.value)} />
+      <Filter value={selected} onChange={setSelected} />
       <main>
         {searchInput.length > 1
           ? filteredResults.map(restaurant => {

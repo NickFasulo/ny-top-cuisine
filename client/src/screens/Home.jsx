@@ -1,27 +1,24 @@
-import "../../src/screens/home.css";
-import "../components/Navbar/navbar.css";
-import { getRestaurants } from "../services/restaurants.js";
-import { useEffect, useState } from "react";
-
+import '../../src/screens/home.css'
+import '../components/Navbar/navbar.css'
+import { getRestaurants } from '../services/restaurants.js'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
-  const [home, setHome] = useState([]);
+  const [home, setHome] = useState([])
 
   useEffect(() => {
-    fetchRestaurants();
-  }, []);
+    fetchRestaurants()
+  }, [])
 
   async function fetchRestaurants() {
-    const allRestaurants = await getRestaurants();
-    setHome(allRestaurants);
-  };
-
-
+    const allRestaurants = await getRestaurants()
+    setHome(allRestaurants)
+  }
 
   return (
     <div>
       <h1>New York Top Cuisine</h1>
-      <div className="rest-container">
+      {/* <div className="rest-container">
         {home.map((restData) => (
           <>
             <img className="image" src={restData.logo_photos} />
@@ -32,16 +29,10 @@ export default function Home() {
           </>
         ))
         }
-      </div>
+      </div> */}
     </div>
   )
 }
-
-
-
-
-
-
 
 // export default function Characters() {
 //   const [characters, setCharacters] = useState([]);
