@@ -55,6 +55,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border: solid black;
+  text-align: center;
 }
 
 .aiBox {
@@ -90,18 +91,32 @@
 .cuisineTitle {
   font-family: fantasy;
   font-size: 45px;
+  text-align: center;
+  
 }
+#cTitle {
+    margin-right: 80px;
+}
+/* #restInfoTitle {
+    
+} */
 
 .detailCuisineList {
   margin-top: 10px;
   font-family: fantasy;
   font-size: 20px;
+  text-align: center;
+  margin-right: 70px;
 }
 
 .infoDetail {
   margin-top: 20px;
+  
   /* display: flex;
     flex-direction: column; */
+}
+#restInfoList {
+    margin-left: 175px;
 }
 
 ul {
@@ -111,9 +126,10 @@ ul {
 .detailButtons {
   margin-top: 20px;
   padding: 10px;
-  margin-right: 10px;
+  margin-left: 65px;
   border-radius: 10px;
   font-size: 20px;
+
 }
 
 #aiTitle {
@@ -136,4 +152,7 @@ ul {
 
 .aiText {
   margin-left: -20px;
+}
+#aiButton {
+    margin-left: 350px;
 }
