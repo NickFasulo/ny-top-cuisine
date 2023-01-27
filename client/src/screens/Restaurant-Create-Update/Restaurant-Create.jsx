@@ -26,6 +26,7 @@ export default function Create() {
         Sunday: '',
     })
     const [restaurant, setRestaurant] = useState({
+        _id: '63cfd071dfa5a4d5e89ac498',
         name: '',
         phone_number: 0,
         cuisines: ["","","",""],
@@ -150,6 +151,14 @@ export default function Create() {
     <div className="background">
         <h1 className='createTitle'>Create A Restaurant!</h1>
       <form className="createForm" onSubmit={handleSubmit}>
+      <input
+          type="text"
+          className='inputs'
+          placeholder="ID"
+          name="_id"
+          value={restaurant._id}
+          onChange={handleChange}
+        />
         <input
           type="text"
           className='inputs'

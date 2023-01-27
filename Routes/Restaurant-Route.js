@@ -24,8 +24,8 @@ router.get("/cuisine/:cuisine", controller.getRestaurantsCuisine)
 
 router.post("/", controller.createRestaurant)
 
-router.put("/:id", controller.updateRestaurant)
+router.put("/id/:id", controller.updateRestaurant)
 
-router.delete("/:id", controller.deleteRestaurant)
+router.delete("/id/:id", controller.deleteRestaurant)
 
 export default router
