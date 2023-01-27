@@ -50,11 +50,15 @@ export default function Home() {
               <h4>
                 City: {home[toggle].address.city}, {home[toggle].address.state}
               </h4>
-              <button onClick={handleToggle}>next</button>
+            <button onClick={handleToggle}>next</button>
+            <br></br>
+            <br></br>
               <div id="iframe">
-        <iframe width="100%" height="100%" src="https://biteable.com/watch/embed/3837562/992063e6c408f66d9f462189156722d5?mute=0&controls=0&autoplay=1&loop=1&playlist=3837562.992063e6c408f66d9f462189156722d5" autoPlay allowFullScreen></iframe> 
+              <iframe width="100%" height="100%" src="https://biteable.com/watch/embed/3837562/992063e6c408f66d9f462189156722d5?mute=0&controls=0&autoplay=1&loop=1&playlist=3837562.992063e6c408f66d9f462189156722d5" autoPlay allowFullScreen></iframe> 
+              
               </div>
             </div>
+              <h1 className="llc">NYTC LLC</h1>
         
         </div>
       }
