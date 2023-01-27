@@ -28,6 +28,9 @@ const Navbar = () => {
           <div className={burger_class}></div>
           <div className={burger_class}></div>
         </div>
+        <Link to={'/'}>
+          <h1 className="nav-title" onClick={'/'}>NYTC</h1>
+          </Link>
       </nav>
 
       <div className={menu_class}>

@@ -1,3 +1,4 @@
+import Intro from './screens/Intro.jsx'
 import Home from './screens/Home.jsx'
 import Browse from './screens/Browse/Browse.jsx'
 import { Routes, Route } from 'react-router-dom'
@@ -12,6 +13,7 @@ export default function Router() {
       <Navbar />
       <div className='pholder'></div>
       <Routes>
+        <Route path='/intro' element={<Intro />} />
         <Route path='/' element={<Home />} />
         <Route path='/browse' element={<Browse />} />
         <Route path='/:id' element={<RestaurantDetail />} />
