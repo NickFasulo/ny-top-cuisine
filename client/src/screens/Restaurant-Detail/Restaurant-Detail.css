@@ -42,7 +42,6 @@
   flex-direction: row;
   justify-content: center;
   margin-top: 15px;
-
   border-bottom: solid rgba(0, 0, 0, 0.23);
   border-spacing: 1em;
   margin-left: 8px;
@@ -97,4 +96,44 @@
   margin-top: 10px;
   font-family: fantasy;
   font-size: 20px;
+}
+
+.infoDetail {
+  margin-top: 20px;
+  /* display: flex;
+    flex-direction: column; */
+}
+
+ul {
+  list-style: none;
+}
+
+.detailButtons {
+  margin-top: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#aiTitle {
+  margin-top: 160px;
+  border-top: solid rgba(0, 0, 0, 0.23);
+  width: 98%;
+  margin-left: 8px;
+}
+
+.aiBox {
+  margin-top: 10px;
+  font-family: fantasy;
+  font-size: 20px;
+  text-align: center;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  padding-right: 55px;
+}
+
+.aiText {
+  margin-left: -20px;
 }

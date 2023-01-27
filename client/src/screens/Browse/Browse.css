@@ -19,3 +19,12 @@
   text-shadow: 1px 1px 1px black;
   font-size: 2.5rem;
 }
+
+.scroll-top {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  transition: 0.15s;
+}
+
+.scroll-top:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.88)
+}
