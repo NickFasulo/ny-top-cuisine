@@ -13,6 +13,9 @@ export default function Router() {
         <Route path='/' element={<Home />} />
         <Route path='/browse' element={<Browse />} />
         <Route path='/:id' element={<RestaurantDetail />} />
+        <Route path='/create-restaurant' element={<Home />} />
+        <Route path='/:id/edit' element={<RestaurantDetail />} />
+
       </Routes>
     </div>
   )
