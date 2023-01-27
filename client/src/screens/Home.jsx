@@ -1,82 +1,66 @@
-import "../../src/screens/home.css";
+  import "../../src/screens/home.css";
 import "../components/navbar.css";
-import { getRestaurants, getRestaurantRandom } from "../services/restaurants.js";
+import {
+  getRestaurants,
+  getRestaurantRandom,
+} from "../services/restaurants.js";
 import { useEffect, useState } from "react";
-
 
 export default function Home() {
   const [home, setHome] = useState([]);
-  const [toggle, setToggle] = useState(0)
-  const [loading, isLoading] = useState(true)
+  const [toggle, setToggle] = useState(0);
+  const [loading, isLoading] = useState(true);
 
   useEffect(() => {
     fetchRestaurants();
-    isLoading(false)
+    isLoading(false);
   }, [toggle]);
 
   async function fetchRestaurants() {
     const allRestaurants = await getRestaurants();
     setHome(allRestaurants);
-  };
-
-
-  function handleToggle() {
-    setToggle((prev) => prev = Math.floor(Math.random() * home.length))
   }
 
-  if (loading) {
+  function handleToggle() {
+    setToggle((prev) => (prev = Math.floor(Math.random() * home.length)));
+  }
+
+  if (!home.length) {
     return (
       <div>
         <h1>Loading...</h1>
       </div>
-    )
+    );
   }
 
   return (
     <>
-    <h1 className="nytc">New York Top Cuisine</h1>
+      <br></br>
+      <h1 className="nytc">New York Top Cuisine</h1>
 
-      {<>
-        {home.length && < div className="box">
+      {
+        <div>
+            <div className="box">
+              <br></br>
+              <h2>Restaurants of the Day!</h2>
 
-                    <br></br>
-          <h2>Restaurants of the Day!</h2>
-
-          <button onClick={handleToggle}>next</button>
-        <img className="image" src={home[toggle].logo_photos} />
-            <h1>{home[toggle].name}</h1>
-            <h3>Rating: {home[toggle].weighted_rating_value}</h3>
-            <h4>City: {home[toggle].address.city}, {home[toggle].address.state}</h4>
-
-        </div>}
-
-
-      </>}
-
+              <img className="image" src={home[toggle].logo_photos} />
+              <h1>{home[toggle].name}</h1>
+              <h3>Rating: {home[toggle].weighted_rating_value}</h3>
+              <h4>
+                City: {home[toggle].address.city}, {home[toggle].address.state}
+              </h4>
+              <button onClick={handleToggle}>next</button>
+              <div id="iframe">
+        <iframe width="100%" height="100%" src="https://biteable.com/watch/embed/3837562/992063e6c408f66d9f462189156722d5?mute=0&controls=0&autoplay=1&loop=1&playlist=3837562.992063e6c408f66d9f462189156722d5" autoPlay allowFullScreen></iframe> 
+              </div>
+            </div>
+        
+        </div>
+      }
     </>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export default function Home() {
 //   const [home, setHome] = useState([]);
@@ -89,8 +73,6 @@ export default function Home() {
 //     const allRestaurants = await getRestaurants();
 //     setHome(allRestaurants);
 //   };
-
-
 
 //   return (
 //     <div>
@@ -110,9 +92,6 @@ export default function Home() {
 //     </div>
 //   )
 // }
-
-
-
 
 // // export default function Home() {
 //   const [data, setData] = useState({});
@@ -151,53 +130,23 @@ export default function Home() {
 //   );
 // }
 
+// return (
+//   <div>
+//     <h1>New York Top Cuisine</h1>
+//     <div className="rest-container">
+//       {home.map((restData) => (
+//         <>
+//           <img className="image" src={restData.logo_photos} />
+//           <h1>{restData.name}</h1>
+//           <h3>Rating: {restData.weighted_rating_value}</h3>
+//           <h4>City: {restData.address.city}, {restData.address.state}</h4>
 
-
-
-
-
-
-  // return (
-  //   <div>
-  //     <h1>New York Top Cuisine</h1>
-  //     <div className="rest-container">
-  //       {home.map((restData) => (
-  //         <>
-  //           <img className="image" src={restData.logo_photos} />
-  //           <h1>{restData.name}</h1>
-  //           <h3>Rating: {restData.weighted_rating_value}</h3>
-  //           <h4>City: {restData.address.city}, {restData.address.state}</h4>
-
-  //         </>
-  //       ))
-  //       }
-  //     </div>
-  //   </div>
-  // );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//         </>
+//       ))
+//       }
+//     </div>
+//   </div>
+// );
 
 // function App() {
 //   const [data, setData] = useState({});
@@ -234,34 +183,6 @@ export default function Home() {
 //    </div>
 //   );
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export default function Characters() {
 //   const [characters, setCharacters] = useState([]);
