@@ -1,0 +1,49 @@
+.rest-card {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 1rem;
+  width: 17.5rem;
+  height: 17.5rem;
+  margin: 2rem 1rem;
+  background: white;
+  transition: 0.15s;
+}
+
+.rest-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.88)
+}
+
+.rest-card img {
+  border-radius: 0.9rem 0.9rem 0 0;
+  width: 100%;
+  height: 200px;
+}
+
+.rest-card span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.3rem 0.5rem;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0 0.9rem;
+  background-color: whitesmoke;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.rest-card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+}
+
+.rest-card-body h3 {
+  margin: 1rem;
+  color: black;
+  text-shadow: 1px 1px 1px white;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

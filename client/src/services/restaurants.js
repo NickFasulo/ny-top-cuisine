@@ -41,7 +41,7 @@ export const createRestaurant = async restaurantData => {
 
 export const updateRestaurant = async (id, restaurantData) => {
   try {
-    const response = await api.put(`/${id}`, restaurantData)
+    const response = await api.put(`/id/${id}`, restaurantData)
     return response.data
   } catch (error) {
     throw error
@@ -50,7 +50,7 @@ export const updateRestaurant = async (id, restaurantData) => {
 
 export const deleteRestaurant = async id => {
   try {
-    const response = await api.delete(`/${id}`)
+    const response = await api.delete(`/id/${id}`)
     return response.data
   } catch (error) {
     throw error
