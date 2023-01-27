@@ -86,6 +86,7 @@
   border-right: solid rgba(0, 0, 0, 0.345);
   width: 30%;
   height: 36.5%;
+  overflow-y: scroll;
 }
 
 .cuisineTitle {
