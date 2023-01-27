@@ -13,6 +13,7 @@ export default function Router() {
   return (
     <div className='App'>
       <div className='pholder'></div>
+      {pathname === "/" ? <></> : <Navbar />}
       <Routes>
         <Route path='/' element={<Intro />} />
         <Route path='/home' element={<Home />} />
