@@ -5,10 +5,30 @@ import { createRestaurant } from '../../services/restaurants';
 
 export default function Create() {
     let navigate = useNavigate();
+    const [cuisine,setCuisine] = useState({
+        cuisine1: "",
+        cuisine2: "",
+        cuisine3: "",
+        cuisine4: "",
+    })
+    const [addresS,setAddresS] = useState({
+        location: "",
+        zip: "",
+        addy: "",
+    })
+    const [ hours,setHours ] = useState({
+        Monday: '',
+        Tuesday: '',
+        Wednesday: '',
+        Thursday: '',
+        Friday: '',
+        Saturday: '',
+        Sunday: '',
+    })
     const [restaurant, setRestaurant] = useState({
         name: '',
         phone_number: 0,
-        cuisines: [""],
+        cuisines: ["","","",""],
         dollar_signs: 0,
         weighted_rating_value: 0,
         food_photos: [""],
@@ -92,97 +112,203 @@ export default function Create() {
       [name]: value,
     }));
   };
+  const handleChangeC = (e) => {
+    const { value, name } = e.target;
+    setCuisine((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    setRestaurant((prev) => ({
+        ...prev,
+        cuisines: [cuisine.cuisine1,cuisine.cuisine2,cuisine.cuisine3,cuisine.cuisine4]
+      }));
+  };
+  const handleChangeA = (e) => {
+    const { value, name } = e.target;
+    setAddresS((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    setRestaurant((prev) => ({
+        ...prev,
+        address: { street_addr:addresS.addy, city:addresS.location, zipcode:addresS.zip}
+      }));
+  };
+  const handleChangeH = (e) => {
+    const { value, name } = e.target;
+    setHours((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    setRestaurant((prev) => ({
+        ...prev,
+        local_hours: {operational: {Monday:hours.Monday,Tuesday:hours.Tuesday,Wednesday:hours.Wednesday,Thursday:hours.Thursday,Friday:hours.Friday,Saturday:hours.Saturday,Sunday:hours.Sunday,}}
+      }));
+  };
 
   return (
     <div className="background">
+        <h1 className='createTitle'>Create A Restaurant!</h1>
       <form className="createForm" onSubmit={handleSubmit}>
         <input
           type="text"
           className='inputs'
-          placeholder="Name | English"
-          name="name_en"
-          value={person.name_en}
+          placeholder="Restaurant Name"
+          name="name"
+          value={restaurant.name}
           onChange={handleChange}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="Name | Russian"
-          name="name_ru"
-          value={person.name_ru}
+          placeholder="Phone Number"
+          name="phone_number"
+          value={restaurant.phone_number}
           onChange={handleChange}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="Position"
-          name="position"
-          value={person.position}
+          placeholder="Cuisine 1"
+          name="cuisine1"
+          value={cuisine.cuisine1}
+          onChange={handleChangeC}
+        />        
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Cuisine 2"
+          name="cuisine2"
+          value={cuisine.cuisine2}
+          onChange={handleChangeC}
+        />
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Cuisine 3"
+          name="cuisine3"
+          value={cuisine.cuisine3}
+          onChange={handleChangeC}
+        />
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Cuisine 4"
+          name="cuisine4"
+          value={cuisine.cuisine4}
+          onChange={handleChangeC}
+        />
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Price Value"
+          name="dollar_signs"
+          value={restaurant.dollar_signs}
           onChange={handleChange}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="Reasoning"
-          name="reasoning"
-          value={person.reasoning}
+          placeholder="Rating"
+          name="weighted_rating_value"
+          value={restaurant.weighted_rating_value}
           onChange={handleChange}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="Photo Url"
-          name="photo"
-          value={person.photo}
+          placeholder="Food Photo"
+          name="food_photos"
+          value={restaurant.food_photos}
           onChange={handleChange}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="Date Of Birth"
-          name="dob"
-          value={person.dob}
+          placeholder="Logo"
+          name="logo_photos"
+          value={restaurant.logo_photos}
           onChange={handleChange}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="Location Of Birth"
-          name="cob"
-          value={person.cob}
-          onChange={handleChange}
+          placeholder="Street Address"
+          name="addy"
+          value={addresS.addy}
+          onChange={handleChangeA}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="US Date"
-          name="sanctions_us_date"
-          value={person.sanctions_us_date}
-          onChange={handleChange}
+          placeholder="Zipcode"
+          name="zip"
+          value={addresS.zip}
+          onChange={handleChangeA}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="UA Date"
-          name="sanctions_ua_date"
-          value={person.sanctions_ua_date}
-          onChange={handleChange}
+          placeholder="Location"
+          name="location"
+          value={addresS.location}
+          onChange={handleChangeA}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="AU Date"
-          name="sanctions_au_date"
-          value={person.sanctions_au_date}
-          onChange={handleChange}
+          placeholder="Monday Hours"
+          name="Monday"
+          value={hours.Monday}
+          onChange={handleChangeH}
         />
         <input
           type="text"
           className='inputs'
-          placeholder="Person ID"
-          name="person_id"
-          value={person.person_id}
-          onChange={handleChange}
+          placeholder="Tuesday Hours"
+          name="Tuesday"
+          value={hours.Tuesday}
+          onChange={handleChangeH}
+        />
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Wednesday Hours"
+          name="Wednesday"
+          value={hours.Wednesday}
+          onChange={handleChangeH}
+        />
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Thursday Hours"
+          name="Thursday"
+          value={hours.Thursday}
+          onChange={handleChangeH}
+        />
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Friday Hours"
+          name="Friday"
+          value={hours.Friday}
+          onChange={handleChangeH}
+        />
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Saturday Hours"
+          name="Saturday"
+          value={hours.Saturday}
+          onChange={handleChangeH}
+        />
+        <input
+          type="text"
+          className='inputs'
+          placeholder="Sunday Hours"
+          name="Sunday"
+          value={hours.Sunday}
+          onChange={handleChangeH}
         />
         <button className='inputs' type="submit">Submit</button>
       </form>
