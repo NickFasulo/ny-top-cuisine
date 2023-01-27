@@ -3,6 +3,8 @@ import Browse from './screens/Browse/Browse.jsx'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/navbar.jsx'
 import RestaurantDetail from './screens/Restaurant-Detail/Restaurant-Detail.jsx'
+import Create from './screens/Restaurant-Create-Update/Restaurant-Create.jsx'
+import Edit from './screens/Restaurant-Create-Update/Restaurant-Edit.jsx'
 
 export default function Router() {
   return (
@@ -13,8 +15,8 @@ export default function Router() {
         <Route path='/' element={<Home />} />
         <Route path='/browse' element={<Browse />} />
         <Route path='/:id' element={<RestaurantDetail />} />
-        <Route path='/create-restaurant' element={<Home />} />
-        <Route path='/:id/edit' element={<RestaurantDetail />} />
+        <Route path='/create-restaurant' element={<Create />} />
+        <Route path='/:id/edit' element={<Edit />} />
 
       </Routes>
     </div>
