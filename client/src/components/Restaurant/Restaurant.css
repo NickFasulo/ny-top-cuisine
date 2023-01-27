@@ -1,14 +1,16 @@
 .rest-card {
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
   border-radius: 1rem;
-  width: 260px;
+  width: 17.5rem;
+  height: 17.5rem;
   margin: 2rem 1rem;
   background: white;
+  transition: 0.15s;
 }
 
 .rest-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.88)
 }
 
 .rest-card img {
@@ -21,10 +23,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
   border-radius: 0 0.9rem;
-  background-color: white;
+  background-color: whitesmoke;
   color: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 .rest-card-body {
