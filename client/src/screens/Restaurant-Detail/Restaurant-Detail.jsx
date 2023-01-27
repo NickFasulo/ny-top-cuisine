@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import './Restaurant-Detail.css'
-import { useParams,useNavigate } from 'react-router-dom'
+import { useParams,useNavigate,Link } from 'react-router-dom'
 import { getRestaurant, deleteRestaurant } from '../../services/restaurants'
 import { Configuration, OpenAIApi } from "openai";
 
@@ -91,8 +91,8 @@ export default function RestaurantDetail() {
                 <li key='12' className='detailCuisineList'>{`Price Rating: 💰${restaurant.dollar_signs}`}</li>
                 <li key='13' className='detailCuisineList'>{`Rating: ⭐${restaurant.weighted_rating_value}`}</li>
             </ul>
-            <button className='detailButtons'>Edit Restaurant</button>
-            <button className='detailButtons'>Delete Restaurant</button>
+            <Link to={`/${id}/edit`}><button className='detailButtons'>Edit Restaurant</button></Link>
+            <button className='detailButtons' onClick={deleteRestaurants}>Delete Restaurant</button>
             </div>
             <h2 className='cuisineTitle' id='aiTitle'>{`Why NYTC Loves ${restaurant.name}`}</h2>
             <div className='aiBox'>
