@@ -29,6 +29,9 @@ const Navbar = () => {
           <div className={burger_class}></div>
           <div className={burger_class}></div>
         </div>
+        <Link to={'/home'}>
+          <h1 className="nav-title" onClick={'/home'}>NYTC</h1>
+          </Link>
       </nav>
 
       <div className={menu_class}>
@@ -36,6 +39,10 @@ const Navbar = () => {
           <Link id={'search'} to={'/browse'}>
             Search restaurants here!
           </Link>
+          <Link id={'search'} to={'/create-restaurant'}>
+            Add Restaurants Here!
+          </Link>
+
         </div>
         <img src={'logo.jpeg'} style={{ width: 340, height: 280 }} />
         <SocialIcon url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
