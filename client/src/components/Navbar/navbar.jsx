@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './navbar.css'
 import { Link } from 'react-router-dom'
+import { SocialIcon } from 'react-social-icons';
 
 const Navbar = () => {
   // to change burger classes
@@ -44,6 +45,14 @@ const Navbar = () => {
 
         </div>
         <img src={'logo.jpeg'} style={{ width: 340, height: 280 }} />
+        <SocialIcon url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+        <br></br>
+        <SocialIcon url="https://www.instagram.com/unpopularcats/?hl=en" />
+        <br></br>
+        <SocialIcon url="https://twitter.com/imsohonesttho?lang=en" />
+        <br></br>
+        <SocialIcon url="https://github.com/NickFasulo/ny-top-cuisine/pull/18" />
+        
       </div>
     </>
   )

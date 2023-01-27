@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import './Restaurant-Detail.css'
-import { useParams,useNavigate } from 'react-router-dom'
+import { useParams,useNavigate,Link } from 'react-router-dom'
 import { getRestaurant, deleteRestaurant } from '../../services/restaurants'
 import { Configuration, OpenAIApi } from "openai";
 
@@ -77,28 +77,28 @@ export default function RestaurantDetail() {
             </h4>
             </div>
             <ul className='detailCuisines'>
-                <h2 className='cuisineTitle'>Cuisines</h2>
+                <h2 className='cuisineTitle' id='cTitle'>Cuisines</h2>
                 {restaurant?.cuisines.map((cuisine) => (
                 <li key={Math.random()} className='detailCuisineList'>{cuisine}</li>
             ))}</ul>
             <div className='infoDetail'>
-            <h2 className='cuisineTitle'>Restaurant Info</h2>
-            <ul>
-                <li key='8' className='detailCuisineList'>{`Street Address: ${restaurant.address.street_addr}`}</li>
-                <li key='9' className='detailCuisineList'>{`Location: ${restaurant.address.city}`}</li>
-                <li key='10' className='detailCuisineList'>{`Zipcode: ${restaurant.address.zipcode}`}</li>
-                <li key='11' className='detailCuisineList'>{`Phone: ${restaurant.phone_number}`}</li>
-                <li key='12' className='detailCuisineList'>{`Price Rating: 💰${restaurant.dollar_signs}`}</li>
-                <li key='13' className='detailCuisineList'>{`Rating: ⭐${restaurant.weighted_rating_value}`}</li>
+            <h2 className='cuisineTitle' id='restInfoTitle'>Restaurant Info</h2>
+            <ul id='restInfoList'>
+                <li key='8' className='detailCuisineList' id='restInfoList'>{`Street Address: ${restaurant.address.street_addr}`}</li>
+                <li key='9' className='detailCuisineList' id='restInfoList'>{`Location: ${restaurant.address.city}`}</li>
+                <li key='10' className='detailCuisineList' id='restInfoList'>{`Zipcode: ${restaurant.address.zipcode}`}</li>
+                <li key='11' className='detailCuisineList' id='restInfoList'>{`Phone: ${restaurant.phone_number}`}</li>
+                <li key='12' className='detailCuisineList' id='restInfoList'>{`Price Rating: 💰${restaurant.dollar_signs}`}</li>
+                <li key='13' className='detailCuisineList' id='restInfoList'>{`Rating: ⭐${restaurant.weighted_rating_value}`}</li>
             </ul>
-            <button className='detailButtons'>Edit Restaurant</button>
-            <button className='detailButtons'>Delete Restaurant</button>
+            <Link to={`/${id}/edit`}><button className='detailButtons'>Edit Restaurant</button></Link>
+            <button className='detailButtons' onClick={deleteRestaurants}>Delete Restaurant</button>
             </div>
             <h2 className='cuisineTitle' id='aiTitle'>{`Why NYTC Loves ${restaurant.name}`}</h2>
             <div className='aiBox'>
                 <p className='aiText'>{ai || aiLoad}</p>
             </div>
-            <button className='detailButtons' onClick={HandleAI}>Generate LOVE</button>
+            <button className='detailButtons' id='aiButton' onClick={HandleAI}>Generate LOVE</button>
         </div>
         </>)}
 
