@@ -8,6 +8,7 @@ import { Configuration, OpenAIApi } from "openai";
 export default function RestaurantDetail() {
     const [restaurant,setRestaurant] = useState({})
     const [ai,setAI] = useState()
+    const [aiLoad,setAILoad] = useState("")
     const { id } = useParams()
     const navigate = useNavigate()
     const [loading, isLoading] = useState(true)
@@ -20,7 +21,7 @@ export default function RestaurantDetail() {
             model: "text-davinci-003",
             prompt: `Tell me why you love ${restaurant.name} food so much. They serve ${restaurant.cuisines[0]}, ${restaurant.cuisines[1]} and ${restaurant.cuisines[2]}`,
             temperature: 0.6,
-            max_tokens: 99,
+            max_tokens: 120,
       })
       setAI(complete.data.choices[0].text)
       return complete.data.choices[0].text
@@ -30,9 +31,10 @@ export default function RestaurantDetail() {
         fetchRestaurant()
         isLoading(false)
         console.log()
-    }, [])
+    }, [id])
 
     const HandleAI = () => {
+        setAILoad('Generating Love...')
         completion()
     }
 
@@ -40,7 +42,7 @@ export default function RestaurantDetail() {
         const oneRest = await getRestaurant(id)
         setRestaurant(oneRest)
     }
-    
+
     const deleteRestaurants = async() => {
         await deleteRestaurant(id)
         navigate(`/browse`, { replace: true });
@@ -94,7 +96,7 @@ export default function RestaurantDetail() {
             </div>
             <h2 className='cuisineTitle' id='aiTitle'>{`Why NYTC Loves ${restaurant.name}`}</h2>
             <div className='aiBox'>
-                <p className='aiText'>{ai}</p>
+                <p className='aiText'>{ai || aiLoad}</p>
             </div>
             <button className='detailButtons' onClick={HandleAI}>Generate LOVE</button>
         </div>
