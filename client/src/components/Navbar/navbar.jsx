@@ -28,8 +28,8 @@ const Navbar = () => {
           <div className={burger_class}></div>
           <div className={burger_class}></div>
         </div>
-        <Link to={'/'}>
-          <h1 className="nav-title" onClick={'/'}>NYTC</h1>
+        <Link to={'/home'}>
+          <h1 className="nav-title" onClick={'/home'}>NYTC</h1>
           </Link>
       </nav>
 
@@ -38,6 +38,10 @@ const Navbar = () => {
           <Link id={'search'} to={'/browse'}>
             Search restaurants here!
           </Link>
+          <Link id={'search'} to={'/create-restaurant'}>
+            Add Restaurants Here!
+          </Link>
+
         </div>
         <img src={'logo.jpeg'} style={{ width: 340, height: 280 }} />
       </div>

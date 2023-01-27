@@ -13,8 +13,8 @@ export default function Router() {
       <Navbar />
       <div className='pholder'></div>
       <Routes>
-        <Route path='/intro' element={<Intro />} />
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Intro />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/browse' element={<Browse />} />
         <Route path='/:id' element={<RestaurantDetail />} />
         <Route path='/create-restaurant' element={<Create />} />
