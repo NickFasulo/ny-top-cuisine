@@ -12,8 +12,12 @@ export default function Router() {
 
   return (
     <div className='App'>
+      {pathname === "/" ? <></> : (
+      <>
+      <Navbar />
       <div className='pholder'></div>
-      {pathname === "/" ? <></> : <Navbar />}
+      </>
+      )}
       <Routes>
         <Route path='/' element={<Intro />} />
         <Route path='/home' element={<Home />} />
