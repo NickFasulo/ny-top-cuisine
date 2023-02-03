@@ -1,0 +1,38 @@
+.createForm {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin-top: 1vh;
+    margin-left: 43vw;
+    flex-direction: column;
+    width: 200px;
+  }
+  .inputs {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .background {
+    background-image: linear-gradient(
+    to bottom right,
+    rgb(77, 125, 255),
+    rgba(50, 27, 160, 0.935)
+  );
+    height: 120vh;
+    width: 100vw;
+    position: absolute;
+    margin: 0 auto;
+    background-size: cover;
+    z-index: -1;
+    margin-top: -60px;
+    background-position: center;
+  }
+.createTitle {
+    font-family: fantasy;
+    font-size: 50px;
+    /* background-color: #13274f; */
+    color: whitesmoke;
+    margin-top: 60px;
+    text-align: center;
+    margin-left: 20px;
+}

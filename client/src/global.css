@@ -1,3 +1,17 @@
 body {
   margin: 0;
+  font-family: fantasy, sans-serif;
+}
+
+.pholder {
+  height: 5em;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }

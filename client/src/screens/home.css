@@ -1,0 +1,61 @@
+  #iframe {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+  }
+  
+  body {
+    width: 100%;
+    height: 100%;
+
+  }
+
+
+  .vjs-has-started .vjs-control-bar {
+    display: none !important;
+  }
+
+  .video-js .vjs-big-play-button {
+    display: none !important;
+  }
+
+
+  .box {
+    color:white;
+    text-align:center;
+   /* display:flex; */
+   /* flex-direction: column; */
+   /* width: 720px; */
+   /* align-items: center; */
+
+    margin-top: 50px;
+    /* text-align: center; */
+
+  }
+
+  .video {
+    margin-top: 100px;
+    max-width: 100vw;
+   
+  }
+
+  .image {
+    width: 20vw;
+    height: 20hv;
+
+  }
+
+  .nytc {
+    color: white;
+  }
+
+  .llc {
+    
+    text-align: center;
+    margin-top: 10px;
+    
+
+    color: aquamarine;
+  }

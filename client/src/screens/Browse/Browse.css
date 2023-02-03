@@ -1,0 +1,31 @@
+.browse {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(77, 125, 255),
+    rgba(50, 27, 160, 0.935)
+  );
+  padding-top: 1rem;
+}
+
+.browse main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.browse h1 {
+  margin: 1rem 2rem;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.scroll-top {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  transition: 0.15s;
+}
+
+.scroll-top:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.88)
+}
